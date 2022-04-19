@@ -1,0 +1,7 @@
+1) Un bot, il peut faire tout ce que vous faites vous-même sur Discord comme poster ou supprimer des messages, ajouter des emoji en réaction à un message ou encore créer et changer les rôles des membres d'un serveur.
+
+Un bot il ne fera donc rien de magique, c'est vous qui allez devoir coder tous ces comportements vous même.
+
+L'intérêt du bot c'est qu'il sera disponible 24h/24, 7j/7.
+
+2) Dans le domaine informatique, le terme log désigne un type de fichier, ou une entité équivalente, dont la mission principale consiste à stocker un historique des événements. Diminutif de logging, le terme peut être traduit en français par "journal". Le log s'apparente ainsi à un journal de bord horodaté, qui ordonne les différents événements qui se sont produits sur un ordinateur, un serveur, etc. Il permet ainsi d'analyser heure par heure, voire minute par minute, l'activité interne d'un processus
