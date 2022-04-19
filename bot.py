@@ -1,13 +1,15 @@
-
 from discord import Client
 import discord
+import os
+from dotenv import load_dotenv
 
+load_dotenv(dotenv_path="config")
 
 
 class MyBot(Client):
     def __init__(self):
         super().__init__()
-        self.run("OTU4NjkyOTE1OTMxMTUyNDY1.YkRCWg.Gt1yl-Gmw1msMHVFk44q2ITlEvU")
+        self.run("OTU4NjkyOTE1OTMxMTUyNDY1.YkRCWg.bW8O5-kdKfVJdwbS9d-WMRtX3TE")
 
    # async def on_ready(self):
    #a     self.log.infolog(f"{self.user} has connected to Discord!")
@@ -17,14 +19,30 @@ class MyBot(Client):
         print("Le bot est prêt !")
 
     async def on_message(ctx, message):
-        if message.content == "Ping":
+        print(message.content)
+        if message.content == "ping":
             await message.channel.send("Pong")
-    
+        if len(message.mentions) == 1:
+            if message.content == "<@277429748609843200>":
+                await message.channel.send("Il arrive")
+            if message.content == "<@270144723950370817>":
+                await message.channel.send("Le ping pas c le boss")
+
     async def on_messages(message):
         if message.content.startswith("!del"):
             number = int(message.content.split()[1])
             messages = await message.channel.history(limit=number + 1).flatten()
             for each_message in messages:
                 await each_message.delete()
+    
+    async def on_member_join(self, member): 
+        guild = member.guild
+        if guild.system_channel is not None:
+            to_send = 'Heyyy Welcome {0.mention} to {1.name}! S E B is happy to see you'.format(member, guild)
+            await guild.system_channel.send(to_send)
 
 bot = MyBot() #instance
+default_intents = discord.Intents.default()
+intents = discord.Intents.default()
+intents.members = True
+client = MyClient(intents=intents)
